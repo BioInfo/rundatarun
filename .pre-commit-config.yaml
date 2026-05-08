@@ -1,0 +1,27 @@
+# Pre-commit hooks: secret scan + path/PII scan before any commit lands.
+# Install with: pre-commit install (after `brew install pre-commit`)
+
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.21.2
+    hooks:
+      - id: gitleaks
+        args: ["--config=.gitleaks.toml", "--verbose"]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ["--maxkb=2048"]
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: no-personal-paths
+        name: Block personal home/vault paths
+        entry: scripts/check-no-personal-paths.sh
+        language: system
+        pass_filenames: false

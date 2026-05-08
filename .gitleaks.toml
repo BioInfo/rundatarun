@@ -1,0 +1,68 @@
+# gitleaks config for rundatarun
+# Defaults catch most known credential patterns; rules below add personal-leak guards.
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "anthropic-api-key"
+description = "Anthropic API key"
+regex = '''sk-ant-[a-zA-Z0-9-_]{40,}'''
+tags = ["key", "anthropic"]
+
+[[rules]]
+id = "openai-project-key"
+description = "OpenAI project key"
+regex = '''sk-proj-[a-zA-Z0-9-_]{40,}'''
+tags = ["key", "openai"]
+
+[[rules]]
+id = "artificialanalysis-key"
+description = "Artificial Analysis API key"
+regex = '''aa_[a-zA-Z0-9]{20,}'''
+tags = ["key", "artificialanalysis"]
+
+[[rules]]
+id = "personal-home-path"
+description = "Hardcoded personal home directory"
+regex = '''/Users/bioinfo(/|"|'|\s|$)'''
+tags = ["personal-path"]
+
+[[rules]]
+id = "personal-vault-path"
+description = "Personal Obsidian vault path"
+regex = '''~?/?vaults/obsidian'''
+tags = ["personal-path"]
+
+[[rules]]
+id = "tailscale-cgnat-ip"
+description = "Tailscale CGNAT IP (100.64.0.0/10) — likely homelab leak"
+regex = '''\b100\.(6[4-9]|[7-9][0-9]|1[01][0-9]|12[0-7])\.[0-9]{1,3}\.[0-9]{1,3}\b'''
+tags = ["personal-network"]
+
+[[rules]]
+id = "work-email-az"
+description = "AstraZeneca work email"
+regex = '''[a-zA-Z0-9._%+-]+@astrazeneca\.com'''
+tags = ["personal-email"]
+
+[allowlist]
+description = "Patterns that look like secrets but aren't"
+paths = [
+    '''\.gitleaks\.toml''',
+    '''CONTRIBUTING\.md''',
+    '''README\.md''',
+    # Safety infrastructure files contain the patterns they detect
+    '''scripts/sanitize\.py''',
+    '''scripts/publish-skill\.sh''',
+    '''scripts/check-no-personal-paths\.sh''',
+    '''\.pre-commit-config\.yaml''',
+    '''\.github/workflows/secret-scan\.yml''',
+]
+regexes = [
+    # Allow placeholder-style examples in docs
+    '''<TAILSCALE_IP>''',
+    '''<API_KEY>''',
+    '''YOUR_KEY_HERE''',
+    '''sk-ant-PLACEHOLDER''',
+]

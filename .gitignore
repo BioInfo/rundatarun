@@ -1,0 +1,50 @@
+# Secrets — never commit
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
+**/keys/
+.vault*
+*token*
+*secret*
+api-key*
+api_key*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.tox/
+.pytest_cache/
+
+# Node
+node_modules/
+.pnpm-store/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.cursor/
+
+# Build / cache
+dist/
+build/
+.cache/
+*.log
+
+# Local-only working files
+LOCAL_*.md
+DRAFT_*.md
+.scratch/
