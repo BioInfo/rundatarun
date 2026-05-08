@@ -14,6 +14,9 @@ credentials/
 api-key*
 api_key*
 
+# Allow the secret-scan workflow file (matches *secret* but is config, not a secret)
+!.github/workflows/secret-scan.yml
+
 # Python
 __pycache__/
 *.py[cod]
