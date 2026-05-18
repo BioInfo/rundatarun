@@ -7,9 +7,9 @@
   <a href="https://github.com/BioInfo/rundatarun/network/members"><img src="https://img.shields.io/github/forks/BioInfo/rundatarun?style=flat&color=blue" alt="Forks"></a>
   <a href="https://github.com/BioInfo/rundatarun/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
   <a href="#"><img src="https://img.shields.io/badge/Claude_Code-compatible-blueviolet" alt="Claude Code"></a>
-  <a href="#skills"><img src="https://img.shields.io/badge/skills-1-orange" alt="Skills"></a>
+  <a href="#skills"><img src="https://img.shields.io/badge/skills-2-orange" alt="Skills"></a>
   <a href="#rules"><img src="https://img.shields.io/badge/rules-2-orange" alt="Rules"></a>
-  <a href="#examples"><img src="https://img.shields.io/badge/examples-4-orange" alt="Examples"></a>
+  <a href="#examples"><img src="https://img.shields.io/badge/examples-5-orange" alt="Examples"></a>
   <a href="https://rundatarun.io"><img src="https://img.shields.io/badge/substack-rundatarun.io-09090b?style=flat" alt="Substack"></a>
 </p>
 
@@ -52,6 +52,7 @@ Each skill lives at `skills/<name>/` with a `SKILL.md` (the Claude-facing file) 
 | Skill | What it does | How-to |
 |---|---|---|
 | [`artificial-analysis`](skills/artificial-analysis/) | Live model comparisons from [artificialanalysis.ai](https://artificialanalysis.ai). Triggers on "compare X and Y", "fastest model", "cheapest", coding/math/intelligence questions. Returns 3-5 ranked rows with the relevant tradeoff named. | [HOW-TO](skills/artificial-analysis/HOW-TO.md) |
+| [`dossier`](skills/dossier/) | Decodes an AI company past the marketing site. Always comparative: surfaces 3 contextual alternatives + 1 contrarian "build internal" option, lands a take-the-meeting verdict, and writes 2-3 prep questions sharp enough to expose the gap in 90 seconds. Triggers on "have you seen X", "decode X", "should I take a meeting with X". | [HOW-TO](skills/dossier/HOW-TO.md) |
 
 More skills are queued — adding them as I sanitize them.
 
@@ -76,6 +77,7 @@ Worked examples live at `examples/<topic>/`. Real questions, real outputs, no ca
 | [`top-coding-models.md`](examples/artificial-analysis/top-coding-models.md) | artificial-analysis | "Which model has the best coding score right now?" |
 | [`speed-vs-intel-tradeoff.md`](examples/artificial-analysis/speed-vs-intel-tradeoff.md) | artificial-analysis | "Find the speed-vs-intelligence Pareto frontier." |
 | [`premortem-walkthrough.md`](examples/decision-making/premortem-walkthrough.md) | decision-making | A premortem on a hypothetical "let's migrate to Postgres" decision. |
+| [`fractal-analytics-walkthrough.md`](examples/dossier/fractal-analytics-walkthrough.md) | dossier | Worked decode of Fractal Analytics for an AI product leader at a clinical data vendor. Shows the 3+1 alternatives, opener question, and verdict. |
 
 ## Companion Repos
 
