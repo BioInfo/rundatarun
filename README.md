@@ -53,6 +53,7 @@ Each skill lives at `skills/<name>/` with a `SKILL.md` (the Claude-facing file) 
 |---|---|---|
 | [`artificial-analysis`](skills/artificial-analysis/) | Live model comparisons from [artificialanalysis.ai](https://artificialanalysis.ai). Triggers on "compare X and Y", "fastest model", "cheapest", coding/math/intelligence questions. Returns 3-5 ranked rows with the relevant tradeoff named. | [HOW-TO](skills/artificial-analysis/HOW-TO.md) |
 | [`dossier`](skills/dossier/) | Decodes an AI company past the marketing site. Always comparative: surfaces 3 contextual alternatives + 1 contrarian "build internal" option, lands a take-the-meeting verdict, and writes 2-3 prep questions sharp enough to expose the gap in 90 seconds. Triggers on "have you seen X", "decode X", "should I take a meeting with X". | [HOW-TO](skills/dossier/HOW-TO.md) |
+| [`grill-me`](skills/grill-me/) | Interrogates you about a plan one question at a time, recommends an answer per branch, reads the code instead of asking when it can, and resolves the decision tree before you start. Emits a Resolved-decisions summary. User-invoked only. Adapted from [Matt Pocock](https://github.com/mattpocock/skills). | [HOW-TO](skills/grill-me/HOW-TO.md) |
 
 More skills are queued — adding them as I sanitize them.
 
